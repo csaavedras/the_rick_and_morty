@@ -1,7 +1,7 @@
 import { CodegenConfig } from "@graphql-codegen/cli";
 
 const config: CodegenConfig = {
-  schema: "https://odyssey-lift-off-server.herokuapp.com/",
+  schema: "https://rickandmortyapi.com/graphql",
   documents: ["src/**/*.tsx"],
   generates: {
     "./src/__generated__/": {
