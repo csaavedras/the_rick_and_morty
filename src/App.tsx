@@ -4,6 +4,8 @@ import { Spinner, Table } from "flowbite-react";
 import formatDate from "./utils/formatDate";
 import { useNavigate } from "react-router-dom";
 
+// alexis.rivasatay@cencosud.cl -- hithub
+
 const QUERY = gql(`
     query Query{
     episodes {
@@ -31,9 +33,14 @@ function App() {
         <Spinner aria-label="Default status example" size="xl" />
       </div>
     );
-  if (error) return <p>`Error! ${error.message}`</p>;
+  if (error)
+    return (
+      <div className="flex h-screen w-full items-center justify-center">
+        <p>`Error! ${error.message}`</p>
+      </div>
+    );
 
-  const dataContent = data?.episodes?.results || null;
+  const dataContent = data?.episodes?.results;
 
   const handleRowClick = (ids: number) => {
     navigate(`/episode/${ids}`);
